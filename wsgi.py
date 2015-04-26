@@ -172,8 +172,8 @@ class Hello(object):
         return outstring
     #@+node:2015.20150330144929.1713: *3* twoDgear
     @cherrypy.expose
-    # N 為齒數, M 為模數, P 為壓力角
-    def twoDgear(self, N=20, M=5, P=15):
+    # A齒數1,B齒數2,C齒數3,D齒數4,E齒數5,F齒數6, M 為模數, P 為壓力角
+    def index(self,A=None,B=None,C=None,D=None, E=None, F=None, M=5, P=15):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -187,10 +187,219 @@ class Hello(object):
     <!-- 啟動 brython() -->
     <body onload="brython()">
         
-    <form method=POST action=do2Dgear>
-    齒數:<input type=text name=N><br />
-    模數:<input type=text name=M><br />
-    壓力角:<input type=text name=P><br />
+    <form method=POST action=mygeartest3>
+
+    <p>齒數1:
+    <select name=A>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    <p>齒數2:
+    <select name=B>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    <p>齒數3:
+    <select name=C>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    <p>齒數4:
+    <select name=D>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    <p>齒數5:
+    <select name=E>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    </select>
+    <p>齒數6:
+    <select name=F>
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+    <option>26
+    <option>27
+    <option>28
+    <option>29
+    <option>30
+
+
+    </select>
+    <p>模數:
+    <select name=M>
+
+    <option>2
+    <option>3
+    <option>4
+    <option>5
+    <option>6
+    <option>7
+    <option>8
+    <option>9
+    <option>10
+    <option>11
+    <option>12
+    <option>13
+    <option>14
+    <option>15
+    <option>16
+    <option>17
+    <option>18
+    <option>19
+    <option>20
+    <option>21
+    <option>22
+    <option>23
+    <option>24
+    <option>25
+
+
+
+    </select>
+
+    <p>壓力角:
+    <select name=P>
+    <option>14.5
+    <option>15.0
+    <option>15.5
+    <option>16.0
+    <option>16.5
+    <option>17.0
+    <option>17.5
+    <option>18.0
+    <option>18.5
+    <option>19.0
+    <option>19.5
+    <option>20.0
+    <option>20.5
+    <option>21.0
+    <option>21.5
+    <option>22.0
+    <option>22.5
+    </select>
+    </br>
+
     <input type=submit value=send>
     </form>
     </body>
@@ -827,6 +1036,160 @@ class Hello(object):
 
     </script>
     <canvas id="plotarea" width="1200" height="1200"></canvas>
+    </body>
+    </html>
+    '''
+
+        return outstring
+    #@+node:2015.20150426221627.1602: *3* mygeartest3
+    @cherrypy.expose
+    # A齒數1,B齒數2,C齒數3,D齒數4,E齒數5,F齒數6, M 為模數, P 為壓力角
+    def mygeartest3(self,A=15,B=17,C=15,D=17, E=15, F=17, M=5, P=15):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    <!-- 以下為 canvas 畫圖程式 -->
+    <script type="text/python">
+    # 從 browser 導入 document
+    from browser import document
+    from math import *
+    # 請注意, 這裡導入位於 Lib/site-packages 目錄下的 spur.py 檔案
+    import spur
+
+    # 準備在 id="plotarea" 的 canvas 中繪圖
+    canvas = document["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
+    # 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
+    # midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
+    # Gear(midx, midy, rp, n=20, pa=20, color="black"):
+    # 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
+    # 壓力角 pa 單位為角度
+    pa ='''+str(P)+'''
+    # m 為模數
+    m = '''+str(M)+'''
+    # 第1齒輪齒數
+    n_g1 = '''+str(A)+'''
+    # 第2齒輪齒數
+    n_g2 = '''+str(B)+'''
+    # 第3齒輪齒數
+    n_g3 = '''+str(C)+'''
+    # 第4齒輪齒數
+    n_g4 = '''+str(D)+'''
+    # 第5齒輪齒數
+    n_g5 = '''+str(E)+'''
+    # 第6齒輪齒數
+    n_g6 = '''+str(F)+'''
+    # 計算兩齒輪的節圓半徑
+    rp_g1 = m*n_g1/2
+    rp_g2 = m*n_g2/2
+    rp_g3 = m*n_g3/2
+    rp_g4 = m*n_g4/2
+    rp_g5 = m*n_g5/2
+    rp_g6 = m*n_g6/2
+    # 繪圖第1齒輪的圓心座標
+    x_g1 = 280
+    y_g1 = 400
+    # 第2齒輪的圓心座標, 假設排列成水平, 表示各齒輪圓心 y 座標相同
+    x_g2 = x_g1 + rp_g1 + rp_g2
+    y_g2 = y_g1
+    # 第3齒輪的圓心座標
+    x_g3 = x_g1 + rp_g1 + 2*rp_g2 + rp_g3
+    y_g3 = y_g1
+    # 第4齒輪的圓心座標
+    x_g4 = x_g1 + rp_g1 + 2*rp_g2 +2* rp_g3+ rp_g4
+    y_g4 = y_g1
+    # 第5齒輪的圓心座標
+    x_g5 = x_g1 + rp_g1 + 2*rp_g2 +2* rp_g3+2* rp_g4 + rp_g5
+    y_g5 = y_g1
+    # 第6齒輪的圓心座標
+    x_g6 = x_g1 + rp_g1 + 2*rp_g2 +2* rp_g3+2* rp_g4+2*rp_g5+rp_g6
+    y_g6 = y_g1
+    # 將第1齒輪順時鐘轉 90 度
+    # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g1, y_g1)
+    # rotate to engage
+    ctx.rotate(pi/2)
+    # put it back
+    ctx.translate(-x_g1, -y_g1)
+    spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "red")
+    ctx.restore()
+
+    # 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g2, y_g2)
+    # rotate to engage
+    ctx.rotate(-pi/2-pi/n_g2)
+    # put it back
+    ctx.translate(-x_g2, -y_g2)
+    spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "Orange")
+    ctx.restore()
+
+    # 將第3齒輪逆時鐘轉 90 度之後, 再往回轉第2齒輪定位帶動轉角, 然後再逆時鐘多轉一齒, 以便與第2齒輪進行囓合
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g3, y_g3)
+    # rotate to engage
+    # pi+pi/n_g2 為第2齒輪從順時鐘轉 90 度之後, 必須配合目前的標記線所作的齒輪 2 轉動角度, 要轉換到齒輪3 的轉動角度
+    # 必須乘上兩齒輪齒數的比例, 若齒輪2 大, 則齒輪3 會轉動較快
+    # 第1個 -pi/2 為將原先垂直的第3齒輪定位線逆時鐘旋轉 90 度
+    # -pi/n_g3 則是第3齒與第2齒定位線重合後, 必須再逆時鐘多轉一齒的轉角, 以便進行囓合
+    # (pi+pi/n_g2)*n_g2/n_g3 則是第2齒原定位線為順時鐘轉動 90 度, 
+    # 但是第2齒輪為了與第1齒輪囓合, 已經距離定位線, 多轉了 180 度, 再加上第2齒輪的一齒角度, 因為要帶動第3齒輪定位, 
+    # 這個修正角度必須要再配合第2齒與第3齒的轉速比加以轉換成第3齒輪的轉角, 因此乘上 n_g2/n_g3
+    ctx.rotate(-pi/2-pi/n_g3+(pi+pi/n_g2)*n_g2/n_g3)
+    # put it back
+    ctx.translate(-x_g3, -y_g3)
+    spur.Spur(ctx).Gear(x_g3, y_g3, rp_g3, n_g3, pa, "yellow")
+    ctx.restore()
+    #第4齒輪
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g4, y_g4)
+    # rotate to engage
+    ctx.rotate(-pi/2+(pi+pi/n_g3)*n_g3/n_g4)
+    # put it back
+    ctx.translate(-x_g4, -y_g4)
+    spur.Spur(ctx).Gear(x_g4, y_g4, rp_g4, n_g4, pa, "green")
+    ctx.restore()
+    #第5齒輪
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g5, y_g5)
+    # rotate to engage
+    ctx.rotate(-pi/2-pi/n_g5+(pi+pi/n_g4)*n_g4/n_g5)
+    # put it back
+    ctx.translate(-x_g5, -y_g5)
+    spur.Spur(ctx).Gear(x_g5, y_g5, rp_g5, n_g5, pa, "blue")
+    ctx.restore()
+    #第6齒輪(囓合有問題)
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g6, y_g6)
+    # rotate to engage
+    ctx.rotate(-pi/2+pi/n_g6+(pi+pi/n_g5)*n_g5/n_g6)
+    # put it back
+    ctx.translate(-x_g6, -y_g6)
+    spur.Spur(ctx).Gear(x_g6, y_g6, rp_g6, n_g6, pa, "purple")
+    ctx.restore()
+
+
+    </script>
+    <canvas id="plotarea" width="4000" height="1200"></canvas>
     </body>
     </html>
     '''
